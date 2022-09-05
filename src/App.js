@@ -43,7 +43,8 @@ function App() {
 	return (
 		<>
 		<RegularList
-			items={people}
+			items={people} 
+			// `resourceName` is a prop to display each array item as a component
 			resourceName="person"
 			itemComponent={SmallPersonListItem} />
 		<NumberedList

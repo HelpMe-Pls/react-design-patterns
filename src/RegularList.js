@@ -5,9 +5,14 @@ export const RegularList = ({
 }) => {
 	return (
 		<>
-		{items.map((item, i) => (
-			<ItemComponent key={i} {...{ [resourceName]: item }} />
-		))}
+			{items.map((item, i) => (
+				<ItemComponent
+					key={i}
+					// resolves to `person={item}`
+					// spread it to get all of `item`'s fields
+					{...{ [resourceName]: item }}
+				/>
+			))}
 		</>
 	)
 }
