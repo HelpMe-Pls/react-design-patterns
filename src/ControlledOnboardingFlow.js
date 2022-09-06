@@ -1,6 +1,8 @@
 import React from 'react';
 
-export const ControlledOnboardingFlow = ({ children, onFinish, currentIndex, onNext }) => {
+export const ControlledOnboardingFlow = ({ children, currentIndex, onNext }) => {
+	
+	// `stepData` == `{ name: 'John Doe' }` from `StepOne`
 	const goToNext = stepData => {
 		onNext(stepData);
 	}

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ControlledOnboardingFlow } from './ControlledOnboardingFlow';
-import { UncontrolledOnboardingFlow } from './UncontrolledOnboardingFlow';
 
 const StepOne = ({ goToNext }) => (
 	<>
@@ -38,6 +37,8 @@ function App() {
 	}
 
 	return (
+		
+		// Solved the show/hide example from branch 'UNcontrolled-components-02'
 		<ControlledOnboardingFlow
 			currentIndex={currentIndex}
 			onNext={onNext}
