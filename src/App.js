@@ -21,6 +21,8 @@ const StepThree = ({ goToNext }) => (
 
 function App() {
 	return (
+		// This is "uncontrolled" coz if we wanna show/hide a <Step*/> component,
+		// there's no way to do that
 		<UncontrolledOnboardingFlow onFinish={data => {
 			console.log(data);
 			alert('Onboarding complete!');
