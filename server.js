@@ -1,8 +1,8 @@
-const express = require('express');
+import express, { json } from 'express';
 
 const app = express();
 
-app.use(express.json());
+app.use(json());
 
 let currentUser = {
 	id: '123',
@@ -52,7 +52,7 @@ const products = [{
 	rating: 4.2,
 }];
 
-app.get('/current-user', (req, res) => {
+app.get('/current-user', (_req, res) => {
 	res.json(currentUser);
 });
 
@@ -71,7 +71,7 @@ app.post('/users/:id', (req, res) => {
 	res.json(users.find(user => user.id === id));
 });
 
-app.get('/users', (req, res) => {
+app.get('/users', (_req, res) => {
 	res.json(users);
 });
 
@@ -81,7 +81,7 @@ app.get('/products/:id', (req, res) => {
 	res.json(products.find(product => product.id === id));
 });
 
-app.get('/products', (req, res) => {
+app.get('/products', (_req, res) => {
 	res.json(products);
 });
 

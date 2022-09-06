@@ -1,7 +1,7 @@
-export const ProductInfo = ({ product }) => {
-	const { name, price, description, rating } = product || {};
+export const ProductInfo = ({ item }) => {
+	const { name, price, description, rating } = item || {};
 
-	return product ? (
+	return item ? (
 		<>
 		<h3>{name}</h3>
 		<p>{price}</p>
