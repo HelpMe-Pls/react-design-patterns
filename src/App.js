@@ -45,7 +45,7 @@ function App() {
 		>
 			<StepOne />
 			<StepTwo />
-			{onboardingData.age >= 62 && <StepThree />}
+			{onboardingData.age >= 69 && <StepThree />}
 			<StepFour />
 		</ControlledOnboardingFlow>
 	);
