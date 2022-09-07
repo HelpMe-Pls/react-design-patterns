@@ -1,7 +1,7 @@
-import { useResource } from "./useResource";
+import { serverResource, useDataSource } from "./useDataSource";
 
 export const ProductInfo = ({ productId }) => {
-	const product = useResource(`/products/${productId}`);
+	const product = useDataSource(serverResource(`/products/${productId}`));
 
 	const { name, price, description, rating } = product || {};
 
