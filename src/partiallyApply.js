@@ -1,7 +1,6 @@
 export const partiallyApply = (Component, partialProps) => {
-	return props => {
-		return <Component {...partialProps} {...props} />
-	}
+	return props => <Component {...partialProps} {...props} />
+	
 }
 
 export const Button = ({ size, color, text, ...props }) => {
