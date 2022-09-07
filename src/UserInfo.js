@@ -1,15 +1,22 @@
-export const UserInfo = ({ user }) => {
-	const { name, age, hairColor, hobbies } = user || {};
+export function UserInfo({ user, onChangeUser, onSaveUser, onResetUser }) {
+	const { name, age, hairColor } = user || {};
 
 	return user ? (
 		<>
-		<h3>{name}</h3>
-		<p>Age: {age} years</p>
-		<p>Hair Color: {hairColor}</p>
-		<h3>Hobbies:</h3>
-		<ul>
-			{hobbies.map(hobby => <li key={hobby}>{hobby}</li>)}
-		</ul>
+		<label>
+			Name:
+			<input value={name} onChange={e => onChangeUser({ name: e.target.value })} />
+		</label>
+		<label>
+			Age:
+			<input type="number" value={age} onChange={e => onChangeUser({ age: Number(e.target.value) })} />
+		</label>
+		<label>
+			Hair Color:
+			<input value={hairColor} onChange={e => onChangeUser({ hairColor: e.target.value })} />
+		</label>
+		<button onClick={onResetUser}>Reset</button>
+		<button onClick={onSaveUser}>Save Changes</button>
 		</>
-	) : <p>Loading...</p>;
+	) : <p>Loading...</p>
 }

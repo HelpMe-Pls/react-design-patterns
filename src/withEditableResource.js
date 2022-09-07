@@ -30,6 +30,7 @@ export const withEditableResource = (Component, resourcePath, resourceName) => {
 			setData(originalData);
 		}
 
+		// A mini util to capitalize prop names: 
 		const resourceProps = {
 			[resourceName]: data,
 			[`onChange${capitalize(resourceName)}`]: onChange,
